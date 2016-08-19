@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+<title>Admin</title>
+
+<%=stylesheet_link_tag 'bootstrap.min.css'%>
+<%=stylesheet_link_tag 'admin.css'%>
+
+
+  
+  </head>
+<body>
+
+<!--Header_section-->
+
+<header id="header_wrapper" >
+  <div class="container">
+  <ul>
+  <li><%= link_to "Home" , welcome_index_path%></li>
+  <li><%= link_to "Trains" , trains_path%></li>
+  <li><%= link_to "Schedule", trainroutes_path%></li>
+  <li><%= link_to "Station" , stations_path%></li>
+  <li><%= link_to "Fares" , trainfares_path%></li>
+  <li><%= link_to "Contact Us" , welcome_contact_path%></li>
+  <li><% if user_signed_in? %>
+     <%= link_to "sign out",destroy_user_session_path, method: :delete   %> 
+   <% end %></li>
+
+</ul>
+
+    </div>
+</header>
+
+
+<!-------------------Home------------>
+<section id="home" class="top_cont_outer">
+  <div class="hero_wrapper">
+    <div class="container">
+      <div class="home">
+
+        
+         
+   <br>
+
+        <%= yield %>
+   
+      </div> 
+   </div>
+  </div>
+    
+</section>
+<!-----------------Home-End-------------->
+
+<!--Footer-->
+<footer  id="footer">
+<div class="container">
+    <div class="footer_bottom"><span>Copyright © 2015-2016 TMIS, All Rights Reserved </span> </div>
+ 
+</footer>
+
+</div>
+    <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 5000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>

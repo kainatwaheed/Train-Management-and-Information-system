@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  train_id: 1
+  source: MyString
+  destination: MyString
+  fare1: 1
+  fare2: 1
+  fare3: 1
+
+two:
+  train_id: 1
+  source: MyString
+  destination: MyString
+  fare1: 1
+  fare2: 1
+  fare3: 1

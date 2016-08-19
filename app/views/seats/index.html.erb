@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="w3-center">Seats</h1>
+
+<table id="customers">
+  <thead>
+    <tr>
+      <th>Deptdate</th>
+      <th>Train Name</th>
+      <th>Business</th>
+      <th>AC Sleeper</th>
+      <th>Economy</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seats.each do |seat| %>
+      <tr>
+        <td><%= seat.deptdate %></td>
+        <td><%= seat.tname %></td>
+        <td><%= seat.seat1 %></td>
+        <td><%= seat.seat2 %></td>
+        <td><%= seat.seat3 %></td>
+          <% if can? :read , @seat%>
+        <td><%= link_to 'Show', trainfare ,class:"contact_btn" %></td>
+        <%end%>
+         <% if can? :update , @seat%>
+        
+        <td><%= link_to 'Edit', edit_seat_path(seat) %></td>
+        <%end%>
+         <% if can? :destroy , @seat%>
+        <td><%= link_to 'Destroy', seat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+ <% if can? :create , @seat%>
+<%= link_to 'New Seat', new_seat_path %>
+<%end%>

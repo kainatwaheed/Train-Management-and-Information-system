@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<h1 class="w3-center">Reservation</h1>
+
+<div  class="w3-center">
+	<div class="form_show">
+<p class="">
+  <strong>User ID:</strong>
+  <%= @reservation.user_id %>
+</p>
+
+<p>
+  <strong>Trainroute ID:</strong>
+  <%= @reservation.trainroute_id %>
+</p>
+
+<p>
+  <strong>Seats:</strong>
+  <%= @reservation.seats %>
+</p>
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) , class:"admin_btn"%>
+</div>
+</div>

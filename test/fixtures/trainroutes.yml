@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  train_id: 1
+  source: MyString
+  destination: MyString
+  deptdate: 2016-04-25
+  arrivaldate: 2016-04-25
+  deptime: 2016-04-25 11:37:35
+  arrivaltime: 2016-04-25 11:37:35
+
+two:
+  train_id: 1
+  source: MyString
+  destination: MyString
+  deptdate: 2016-04-25
+  arrivaldate: 2016-04-25
+  deptime: 2016-04-25 11:37:35
+  arrivaltime: 2016-04-25 11:37:35

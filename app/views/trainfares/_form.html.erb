@@ -1,0 +1,41 @@
+<%= form_for(@trainfare) do |f| %>
+  <% if @trainfare.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trainfare.errors.count, "error") %> prohibited this trainfare from being saved:</h2>
+
+      <ul>
+      <% @trainfare.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field-area">
+    <%= f.label :train_id, 'Train ID' %><br>
+    <%= f.number_field :train_id %>
+  </div>
+  <div class="field-area">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field-area">
+    <%= f.label :traintype %><br>
+    <%= f.text_field :traintype %>
+  </div>
+  <div class="field-area">
+    <%= f.label :source %><br>
+    <%= f.text_field :source %>
+  </div>
+  <div class="field-area">
+    <%= f.label :destination %><br>
+    <%= f.text_field :destination %>
+  </div>
+  <div class="field-area">
+    <%= f.label :fare1,'Fare' %><br>
+    <%= f.number_field :fare1 %>
+  </div>
+  <div class="form_btn">
+    <%= f.submit "Save" %>
+  </div>
+<% end %>

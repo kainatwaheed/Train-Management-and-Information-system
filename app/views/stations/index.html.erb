@@ -1,0 +1,29 @@
+
+<%= link_to 'New Station', new_station_path , class:"add_btn", style:"margin-left:40px; margin-top:5px;"%>
+<h1 class="w3-center"> Stations</h1>
+<div class="tablecenter">
+<table id="customers" >
+  <thead>
+    <tr>
+      <th>Station ID</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stations.each do |station| %>
+      <tr>
+        <td><%= station.id%></td>
+        <td><%= station.name %></td>
+        <td><%= link_to 'Edit', edit_station_path(station), class:"contact_btn" %></td>
+        <td><%= link_to 'Destroy', station, method: :delete, data: { confirm: 'Are you sure?' } ,class:"contact_btn" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+<br>
+
+

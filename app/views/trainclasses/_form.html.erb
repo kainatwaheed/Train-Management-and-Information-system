@@ -1,0 +1,33 @@
+<%= form_for(@trainclass) do |f| %>
+  <% if @trainclass.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trainclass.errors.count, "error") %> prohibited this trainclass from being saved:</h2>
+
+      <ul>
+      <% @trainclass.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :train_id %><br>
+    <%= f.number_field :train_id %>
+  </div>
+  <div class="field">
+    <%= f.label :totalseats %><br>
+    <%= f.number_field :totalseats %>
+  </div>
+  <div class="field">
+    <%= f.label :fare %><br>
+    <%= f.number_field :fare %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

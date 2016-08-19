@@ -1,0 +1,56 @@
+
+<% if can? :create  , @trainroute %>
+<%= link_to 'Add Fare', new_trainfare_path , class:"add_btn", style:"margin-left:40px; margin-top:5px;"%>
+<% end %>
+<h1 class="w3-center"> Trainfares</h1>
+
+
+<div class="tablecenter">
+<%= search_form_for @q do |f| %>
+
+<div class="field-wrap1">
+<%= f.label :name ,'Train Name' %>
+  <%= f.search_field :name_cont %>
+</div>
+<br>
+
+ <%= f.submit "Search" ,class:"search_btn" %>
+<% end %>
+<br>
+
+
+
+<table id="customers">
+  <thead>
+    <tr>
+      <th>Train</th>
+      <th>Type</th>
+      <th>Source</th>
+      <th>Destination</th>
+      <th>Fare</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trainfares.each do |trainfare| %>
+      <tr>
+        <td><%= trainfare.name %></td>
+        <td><%= trainfare.traintype %></td>
+        <td><%= trainfare.source %></td>
+        <td><%= trainfare.destination %></td>
+        <td><%= trainfare.fare1 %></td>
+        <% if can? :update , @trainfare %>
+        <td><%= link_to 'Edit', edit_trainfare_path(trainfare) ,class:"contact_btn"%></td>
+        <%end%>
+        <% if can? :destroy , @trainfare %>
+        <td><%= link_to 'Destroy', trainfare, method: :delete, data: { confirm: 'Are you sure?' } ,class:"contact_btn"%></td>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

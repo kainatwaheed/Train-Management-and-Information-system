@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'New Reservation', new_reservation_path , class:"add_btn"%>
+<h1 class="w3-center">Reservations</h1>
+
+<table id="customers">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Trainroute</th>
+      <th>Seats</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= reservation.user_id %></td>
+        <td><%= reservation.trainroute_id %></td>
+        <td><%= reservation.seats %></td>
+        <td><%= link_to 'Edit', edit_reservation_path(reservation) , class:"contact_btn" %></td>
+        <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' }  , class:"contact_btn" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

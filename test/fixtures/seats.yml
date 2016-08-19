@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deptdate: 2016-06-02
+  tname: MyString
+  seat1: 1
+  seat2: 1
+  seat3: 1
+  trainroute_id: 1
+
+two:
+  deptdate: 2016-06-02
+  tname: MyString
+  seat1: 1
+  seat2: 1
+  seat3: 1
+  trainroute_id: 1

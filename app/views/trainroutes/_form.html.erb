@@ -1,0 +1,61 @@
+<%= form_for(@trainroute) do |f| %>
+  <% if @trainroute.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trainroute.errors.count, "error") %> prohibited this trainroute from being saved:</h2>
+
+      <ul>
+      <% @trainroute.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="field-area">
+    <%= f.label :train_id %><br>
+    <%= f.number_field :train_id %>
+  </div>
+    <div class="field-area">
+    <%= f.label :name,'Train Name' %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field-area">
+    <%= f.label :source %><br>
+    <%= f.text_field :source %>
+  </div>
+  <div class="field-area">
+    <%= f.label :destination %><br>
+    <%= f.text_field :destination %>
+  </div>
+  <div class="field-area">
+    <%= f.label :distance %><br>
+    <%= f.number_field :distance %>
+  </div>
+  <div class="field-area">
+    <%= f.label :deptdate %><br>
+    <%= f.date_select :deptdate %>
+  </div>
+  <div class="field-area">
+    <%= f.label :arrivaldate %><br>
+    <%= f.date_select :arrivaldate %>
+  </div>
+  <div class="field-area">
+    <%= f.label :deptime %><br>
+    <%= f.time_select :deptime %>
+  </div>
+  <div class="field-area">
+    <%= f.label :arrivaltime %><br>
+    <%= f.time_select :arrivaltime %>
+  </div>
+  <div class="field-area">
+    <%= f.label :totalseat,'Available Seat' %><br>
+    <%= f.number_field :totalseat %>
+  </div>
+  <div class="field-area">
+    <%= f.label :available,'Available' %><br>
+    <%= f.check_box :available %>
+  </div>
+  <div class="form_btn">
+    <%= f.submit "Save"%>
+  </div>
+<% end %>

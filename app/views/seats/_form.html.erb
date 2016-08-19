@@ -1,0 +1,41 @@
+<%= form_for(@seat) do |f| %>
+  <% if @seat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@seat.errors.count, "error") %> prohibited this seat from being saved:</h2>
+
+      <ul>
+      <% @seat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :deptdate %><br>
+    <%= f.date_select :deptdate %>
+  </div>
+  <div class="field">
+    <%= f.label :tname %><br>
+    <%= f.text_field :tname %>
+  </div>
+  <div class="field">
+    <%= f.label :seat1 %><br>
+    <%= f.number_field :seat1 %>
+  </div>
+  <div class="field">
+    <%= f.label :seat2 %><br>
+    <%= f.number_field :seat2 %>
+  </div>
+  <div class="field">
+    <%= f.label :seat3 %><br>
+    <%= f.number_field :seat3 %>
+  </div>
+  <div class="field">
+    <%= f.label :trainroute_id %><br>
+    <%= f.number_field :trainroute_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

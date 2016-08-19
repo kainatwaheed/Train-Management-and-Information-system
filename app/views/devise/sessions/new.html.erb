@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <%=stylesheet_link_tag "log.css"%>
+    <%= javascript_include_tag "login.js"%>
+
+</head>
+<body  class="body" >
+<div class="s_form">
+  <h2>User Login</h2>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+
+  <div class="field-wrap">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field-wrap">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+
+  </div>
+
+ 
+  <div >
+    <%= f.submit "Log In" ,class:"button" %>
+    
+  </div>
+   <%= render "devise/shared/links" %>
+
+<% end %>
+
+</div>
+
+
+
+</div>
+
+
+</body>
+</html>
